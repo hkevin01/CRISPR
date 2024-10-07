@@ -1,0 +1,84 @@
+The error message indicates that your Python environment is managed by the system and does not allow direct installation of packages via `pip`. To resolve this, you can create a virtual environment where you can install packages freely. Here’s how to do that step-by-step:
+
+### Step 1: Install `python3-venv`
+
+If you haven't already, ensure that the `python3-venv` package is installed. Open your terminal and run:
+
+```bash
+sudo apt install python3-venv
+```
+
+### Step 2: Create a Virtual Environment
+
+1. **Create a new directory for your project** (optional):
+   ```bash
+   mkdir my_rocm_project
+   cd my_rocm_project
+   ```
+
+2. **Create a virtual environment**:
+   ```bash
+   python3 -m venv venv
+   ```
+
+### Step 3: Activate the Virtual Environment
+
+Activate the virtual environment using:
+
+- **On Linux and macOS**:
+  ```bash
+  source venv/bin/activate
+  ```
+
+- **On Windows**:
+  ```bash
+  venv\Scripts\activate
+  ```
+
+### Step 4: Install Required Packages
+
+Now that you are in the virtual environment, you can install the `pyrocm` package:
+
+```bash
+pip install pyrocm
+```
+
+### Step 5: Create and Run the ROCm Info Script
+
+1. **Create the Python script** (if you haven't already):
+   ```bash
+   touch rocm_info.py
+   ```
+
+2. **Add the ROCm information script** (as provided earlier) to `rocm_info.py`.
+
+3. **Run the script**:
+   ```bash
+   python rocm_info.py
+   ```
+
+### Summary of Commands
+
+Here’s a summary of the commands you need to run in order:
+
+```bash
+sudo apt install python3-venv
+mkdir my_rocm_project
+cd my_rocm_project
+python3 -m venv venv
+source venv/bin/activate
+pip install pyrocm
+touch rocm_info.py  # Create the script file
+# Add the script content to rocm_info.py
+python rocm_info.py
+```
+
+### Deactivating the Virtual Environment
+
+When you’re done, you can deactivate the virtual environment by running:
+
+```bash
+deactivate
+```
+
+This setup will allow you to manage your Python packages without interfering with the system installation. If you have further questions or run into issues, feel free to ask!
